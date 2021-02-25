@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Product",
+  "description": "A product from Acme's catalog",
+  "type": "object",
+  "properties": {
+   "productId": {
+      "description": "The unique identifier for a product",
+      "type": "integer"
+    },
+    "productName": {
+      "description": "Name of the product",
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+
+    "customer": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "description": "Name of the person",
+          "type": "string"
+        },
+        "lastName": {
+          "description": "Last of the person",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": ["productId", "productName", "price","customer"]
+}
